@@ -6,26 +6,48 @@ app.get('/', (req,res) =>{
         res.send('Ok!');
 });
 
-app.get('/soma/:pri/:sec', (req,res) =>{
-    let pri = parseInt(req.params.pri);
-    let sec = parseInt(req.params.sec);
+app.get('/sum/:um/:dos', (req,res) =>{
+    let um = parseInt(req.params.um);
+    let dos = parseInt(req.params.dos);
+    if(isNaN(um, dos)){
+      let Soma = um + dos;
 
-    let Soma = pri + sec;
-
-    res.send("resultado: " + Soma)
+        res.send("resultado: " + Soma)  
+    } 
 });
 
-app.get('/subtracao/:pri/:sec', (req,res) =>{
-    let pri = parseInt(req.params.pri);
-    let sec = parseInt(req.params.sec);
+app.get('/subt/:pri/:sec', (req,res) =>{
+    let um = parseInt(req.params.um);
+    let dos = parseInt(req.params.dos);
+    if(isNaN(um, dos)){
+      let subt = um - dos;
 
-    let Subt = pri - sec;
+        res.send("resultado: " + subt)  
+    } 
+});
 
-    res.send("resultado: " + Subt)
+app.get('/divi/:pri/:sec', (req,res) =>{
+    let um = parseInt(req.params.um);
+    let dos = parseInt(req.params.dos);
+    if(isNaN(um, dos)){
+      let divi = um / dos;
+
+        res.send("resultado: " + divi)  
+    } 
+});
+
+app.get('/multi/:pri/:sec', (req,res) =>{
+    let um = parseInt(req.params.um);
+    let dos = parseInt(req.params.dos);
+    if(isNaN(um, dos)){
+      let multi = um * dos;
+
+        res.send("resultado: " + multi)  
+    } 
 });
 
 app.listen(3000, () => {
-    console.log('Servidor em execução... ');
+    console.log('Servidor executando ');
     console.log('http://localhost:3000');
 
 
