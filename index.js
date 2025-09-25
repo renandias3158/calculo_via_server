@@ -7,39 +7,59 @@ app.get('/', (req,res) =>{
 });
 
 app.get('/sum/:um/:dos', (req,res) =>{
-    let um = parseInt(req.params.um);
+   let um = parseInt(req.params.um);
     let dos = parseInt(req.params.dos);
-    if(isNaN(um, dos)){
+    if(isNaN(um)){
+     res.send('ERROR')
+    } 
+    if(isNaN(dos)){
+      res.send('ERROR')
+    }else{
       let Soma = um + dos;
 
         res.send("resultado: " + Soma)  
     } 
 });
 
-app.get('/subt/:pri/:sec', (req,res) =>{
+app.get('/subt/:um/:dos', (req,res) =>{
     let um = parseInt(req.params.um);
     let dos = parseInt(req.params.dos);
-    if(isNaN(um, dos)){
-      let subt = um - dos;
-
-        res.send("resultado: " + subt)  
+    if(isNaN(um)){
+     res.send('ERROR')
     } 
+    if(isNaN(dos)){
+      res.send('ERROR')
+    }
+    else{
+       let subt = um - dos;
+        res.send("resultado: " + subt) 
+    }
 });
 
-app.get('/divi/:pri/:sec', (req,res) =>{
+app.get('/divi/:um/:dos', (req,res) =>{
     let um = parseInt(req.params.um);
     let dos = parseInt(req.params.dos);
-    if(isNaN(um, dos)){
-      let divi = um / dos;
-
-        res.send("resultado: " + divi)  
+    if(isNaN(um)){
+     res.send('ERROR')
     } 
+    if(isNaN(dos)){
+      res.send('ERROR')
+    }
+    else{
+       let divi = um / dos;
+      res.send("resultado: " + divi) 
+    }
 });
 
-app.get('/multi/:pri/:sec', (req,res) =>{
-    let um = parseInt(req.params.um);
+app.get('/multi/:um/:dos', (req,res) =>{
+  let um = parseInt(req.params.um);
     let dos = parseInt(req.params.dos);
-    if(isNaN(um, dos)){
+    if(isNaN(um)){
+     res.send('ERROR')
+    } 
+    if(isNaN(dos)){
+      res.send('ERROR')
+    }else{
       let multi = um * dos;
 
         res.send("resultado: " + multi)  
@@ -52,3 +72,6 @@ app.listen(3000, () => {
 
 
 }); 
+
+}); 
+
